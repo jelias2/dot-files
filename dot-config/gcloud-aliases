@@ -1,0 +1,53 @@
+alias gcil='gcloud compute instances list'
+alias gcistart='gcloud compute instances start'
+alias gcscp='gcloud compute scp'
+alias gcdl='gcloud compute disks list'
+alias gcrsl='gcloud run services list'
+alias set-superrare-dev="gcloud config set project superrare-dev && gcloud compute config-ssh"
+alias set-superrare-prod="gcloud config set project superrare-prod && gcloud compute config-ssh"
+alias set-superrare-ops="gcloud config set project superrare-ops && gcloud compute config-ssh"
+alias set-superrare-test="gcloud config set project superrare-test && gcloud compute config-ssh"
+alias set-superrare-staging="gcloud config set project superrare-staging && gcloud compute config-ssh"
+
+alias gen-ssh='gcloud compute config-ssh'
+
+function gcssh() {
+  zone=$(gcil | grep $1 | awk '{print( $2)}')
+  gcloud compute ssh $1 --zone=$zone
+}
+
+
+function gcid() {
+  zone=$(gcloud compute instances list | grep $1 | awk '{print( $2)}')
+  gcloud compute instances delete $1 --zone=$zone
+}
+
+function gcrdd() {
+  region=$(gcloud compute disks list| grep $1 | awk '{print( $2)}')
+  gcloud compute disks delete $1 --region=$region
+}
+
+function gczdd() {
+  zone=$(gcloud compute disks list| grep $1 | awk '{print( $2)}')
+  gcloud compute disks delete $1 --zone=$zone
+}
+
+function gcrsd() {
+  zone=$(gcloud compute disks list| grep $1 | awk '{print( $2)}')
+  gcloud compute disks delete $1 --zone=$zone
+}
+
+function gcrsd() {
+  region=$(gcloud run services list | grep $1 | awk '{print( $3)}')
+  gcloud run services describe $1 --region=$region
+}
+
+function gcrsD() {
+  region=$(gcloud run services list | grep $1 | awk '{print( $3)}')
+  gcloud run services delete $1 --region=$region
+}
+
+function gcsil() {
+     gcloud sql instances list
+} 
+

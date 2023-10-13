@@ -1,0 +1,6 @@
+## This must be at end of SSSH config
+Match User jacobelias,jacob,!superrare
+  ForwardAgent yes
+  PermitLocalCommand yes
+  LocalCommand rsync -L --exclude .netrwhist --exclude .git --exclude .config/iterm2/AppSupport/ --exclude .vim/bundle/youcompleteme/ -vRrlptze "ssh -o PermitLocalCommand=no" %d/./.screenrc %d/./.gitignore %d/./.ssh/git_ed25519.pub %d/./.ssh/authorized_keys %d/./.vimrc %%d/./.config/iterm2/ %d/./.config/z %d/./.config/aliases %d/./.config/all-aliases %d/./.vim/ %d/./bin/ %d/./.bash/ %d/./.bashrc %d/./.tmux.conf %r@%n:/home/%r
+

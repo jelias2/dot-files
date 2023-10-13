@@ -1,0 +1,80 @@
+alias ll='ls -al'
+alias ls='ls --color=auto'
+
+alias k='kubectl'
+alias kgp='kubectl get pods'
+alias kgd='kubectl get deployments'
+alias kdd='kubectl describe deployment'
+alias kdp='kubectl describe pods'
+alias krrd='kubectl rollout restart deployment'
+alias ked='kubectl edit deployment'
+alias ked='kubectl edit deployment'
+
+alias killsr='docker kill $(docker ps -a -q --filter name=sup)'
+
+alias 1pass='eval $(op signin)'
+
+
+alias sys='systemctl'
+
+## Carry enviroment files when becoming sudo
+alias sudo='sudo -sE'
+
+function prev() {
+  history | grep $1 | tail -10
+} 
+
+
+## Displays recently worked on branches in the repo
+function git-recent() {
+  git for-each-ref \
+  --sort=-committerdate refs/heads/ \
+  --format='%(HEAD) %(color:red)%(objectname:short)%(color:reset) %(color:yellow)%(refname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+}
+
+
+## Display process listening to a port
+function ports() {
+  lsof -iTCP -sTCP:LISTEN -P | grep $1
+}
+
+
+alias tdex="tmux detach && exit"
+
+## Display process listening to a port
+function prev() {
+  history | grep $1 | head -n 7
+}
+
+
+alias ldl='docker logs -f $(docker ps -aq | head -n 1)'
+alias ild='docker inspect $(docker ps -aq | head -n 1)'
+
+
+## ghub opens the github repo for the current repository
+# Assumes:
+# - OSX for the last command (/usr/bin/open)
+# - That remote references follow `git@github.com` format instead of `https://github.com` format
+# - Firefox
+alias ghub='git config --get remote.origin.url | sed "s/:/\//" | sed "s/git@/https:\/\//g" | xargs /usr/bin/open -a "/Applications/Firefox.app/"'
+## Open a PR
+function pr(){
+  echo "$(git config --get remote.origin.url | sed 's|\.git$||')/compare/main...$(git branch --show-current)?expand=1" |  sed "s/:/\//" | sed "s/git@/https:\/\//g" | xargs /usr/bin/open -a "/Applications/Firefox.app/"
+}
+
+
+## Bat is color and formatted cat
+alias cat='bat'
+
+# 1pass alias
+alias 1pass='eval $(op signin)'
+
+
+### Git aliases
+alias gs='git status'
+
+alias whatismyip="curl ipv4.icanhazip.com ; curl ipv6.icanhazip.com"
+
+
+## Find the largest files on the machine
+alias ducks='sudo du -ah / | sort -rh | head -20'

@@ -1,0 +1,193 @@
+{
+  "editor.inlineSuggest.enabled": true,
+  "search.quickOpen.includeSymbols": true,
+  "go.lintOnSave": "workspace",
+  "go.lintTool": "golangci-lint",
+  "go.lintFlags": ["--fast"],
+  "go.formatTool": "goimports",
+  "go.autocompleteUnimportedPackages": true,
+  "go.gotoSymbol.includeGoroot": true,
+  "go.gotoSymbol.includeImports": true,
+  "go.useLanguageServer": true,
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": false
+  },
+  "haskell.manageHLS": "GHCup",
+  "github.copilot.advanced": {},
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "breadcrumbs.enabled": false,
+  "editor.accessibilitySupport": "on",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": false
+  },
+  "editor.cursorBlinking": "solid",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorStyle": "block",
+  "editor.fontFamily": "JetBrainsMono Nerd Font",
+  "editor.fontSize": 16,
+  "terminal.integrated.fontSize": 15,
+  "editor.formatOnSave": true,
+  "editor.lineHeight": 28,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.smoothScrolling": true,
+  "editor.suggest.insertMode": "replace",
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+  "errorLens.enabled": true,
+  "errorLens.enabledDiagnosticLevels": ["warning", "info", "hint", "error"],
+  "explorer.confirmDragAndDrop": false,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "prettier.documentSelectors": ["**/*.astro"],
+  "settingsSync.ignoredExtensions": ["antfu.unocss"],
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.replace": "block",
+  "vim.cursorStylePerMode.visual": "block",
+  "vim.cursorStylePerMode.visualblock": "block",
+  "vim.cursorStylePerMode.visualline": "block",
+  "vim.foldfix": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<esc>"],
+      "commands": [
+        {
+          "command": "extension.vim_escape"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"],
+      "when": "editorTextFocus && !inputFocus"
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<esc>"],
+      "commands": [
+        {
+          "command": "extension.vim_escape"
+        }
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "/"],
+      "commands": ["editor.action.commentLine"],
+      "when": "editorTextFocus && !inputFocus"
+    },
+    {
+      "before": ["<leader>", "c"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["<c-]>"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["<c-[>"],
+      "commands": ["editor.action.marker.prev"]
+    },
+    {
+      "after": ["g", "g", "V", "G"],
+      "before": ["<c-a>"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["leader", "q"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["space", "s", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["space", "s", "t"],
+      "commands": ["fzf-quick-open.runFzfSearch"],
+      "editor.commandCompletionAutoInsertEnter": true
+    },
+    {
+      "before": ["space", "t", "h"],
+      "commands": ["workbench.action.selectTheme"]
+    },
+    {
+      "before": ["space", "s", "s"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    }
+  ],
+  "window.commandCenter": true,
+  "workbench.settings.editor": "json",
+  "editor.stickyScroll.enabled": true,
+  "vim.statusBarColorControl": true,
+  "vim.statusBarColors.insert": "#5f0000",
+  "vim.statusBarColors.normal": "#268bd2",
+  "vim.statusBarColors.visual": "#268bd2",
+  "vim.statusBarColors.visualblock": "#859900",
+  "vim.statusBarColors.replace": "#b58900",
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#268bd2",
+    "statusBar.noFolderBackground": "#268bd2",
+    "statusBar.debuggingBackground": "#268bd2",
+    "tab.activeBorder": "#ff0000",
+    "tab.unfocusedActiveBorder": "#000000"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.productIconTheme": "icons-carbon",
+  "git.decorations.enabled": true,
+  "git.enableGutterDecorations": true,
+  "tabnine.experimentalAutoImports": true,
+  "go.toolsManagement.autoUpdate": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vsicons.dontShowNewVersionMessage": true,
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Solarized Light",
+  "sync.gist": "vs-code",
+  "sync.autoUpload": true
+}
